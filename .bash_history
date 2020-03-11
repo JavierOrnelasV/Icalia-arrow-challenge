@@ -17,3 +17,8 @@ rails db:migrate:reset
 clear
 rails console
 exit
+clear
+rails db:migrate:reset
+clear
+rails console
+exit
