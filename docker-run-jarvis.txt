@@ -1,0 +1,12 @@
+docker run \
+ --interactive --tty --rm \
+ --env APPS_CODE="${PWD}" \
+ --env GITHUB_USERNAME=spider351 \
+ --env GITHUB_TOKEN=56360890d7a0176f87440a1f382c8ee2ef8536e3 \
+ --env HEROKU_API_KEY=c27e739b-2705-4dde-8905-b0c4707c739b \
+ --volume /var/run/docker.sock:/var/run/docker.sock \
+ --volume ~/.ssh/id_rsa:/root/.ssh/id_rsa \
+ --volume ~/.ssh/id_rsa.pub:/root/.ssh/id_rsa.pub \
+ --volume ~/.ssh/known_hosts:/root/.ssh/known_hosts \
+ --volume $(pwd):$(pwd) \
+ -w $(pwd) icalialabs/jarvis:latest jarvis install
