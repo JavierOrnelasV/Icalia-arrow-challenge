@@ -97,3 +97,52 @@ rails db:migrate
 clear
 rails db:migrate:reset
 exit
+rails db:migrate
+rails db:migrate:reset
+clear
+rake
+clear
+rake
+clear
+rake
+clear
+rake
+clear
+rails console
+clear
+rails console
+clea
+cleart
+clear
+rake
+clear
+clear
+rake
+clear
+rake
+clear
+rails console
+clear
+rails c
+clear
+rails c
+clear
+rails c
+clear
+rails g migration change_column_user_name_to_arrow
+sudo chown -c -R $USER:$USER $HOME
+clear
+docker_compose run web rails db:migrate:reset
+docker-compose run web rails db:migrate:reset
+rails db:migrate:reset
+clear
+Arrow.column_names
+clear
+rails c
+clear
+rails c
+clear
+rails c
+clear
+rails c
+exit
