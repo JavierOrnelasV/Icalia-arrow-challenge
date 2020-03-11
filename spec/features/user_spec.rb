@@ -6,6 +6,7 @@ RSpec.feature "Users", type: :feature do
       visit new_user_registration_path
       within('form') do
         fill_in "Email", with: "new_user@gmail.com"
+        fill_in "Name", with: "User name"
         fill_in "Password", with: "12345678"
         fill_in "Password confirmation", with: "12345678"
         click_on('Sign up')
@@ -13,7 +14,7 @@ RSpec.feature "Users", type: :feature do
       expect(current_path).to eq root_path
     end
 
-    scenario "should fail" do
+    scenario "should fail if password is invalid" do
       visit new_user_registration_path
       within('form') do
         fill_in "Email", with: "new_user@gmail.com"
@@ -22,6 +23,17 @@ RSpec.feature "Users", type: :feature do
         click_on('Sign up')
       end
       expect(page).to have_content('Password is too short')
+    end
+
+    scenario "should fail if email is invalid" do
+      visit new_user_registration_path
+      within('form') do
+        fill_in "Email", with: "new_user@@gmail.com"
+        fill_in "Password", with: "123456"
+        fill_in "Password confirmation", with: "123456"
+        click_on('Sign up')
+      end
+      expect(page).to have_content('Email is invalid')
     end
   end
 

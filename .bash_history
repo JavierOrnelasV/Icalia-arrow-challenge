@@ -22,3 +22,9 @@ rails db:migrate:reset
 clear
 rails console
 exit
+clear
+rails console
+clear
+rails console
+clear
+exit
