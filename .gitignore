@@ -60,3 +60,5 @@ yarn-debug.log*
 .yarn-integrity
 
 docker-run-jarvis.txts
+
+.bash_history
