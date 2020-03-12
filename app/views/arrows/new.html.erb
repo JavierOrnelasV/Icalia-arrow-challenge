@@ -1,0 +1,18 @@
+<h2>Send an Arrow</h2>
+
+<%= form_for(@arrow) do |f| %>
+
+  <div class="field">
+    <%= f.label :destination %><br />
+    <%= f.select :destination, options_from_collection_for_select(@users, :id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :reason %><br />
+    <%= f.text_field :reason, autocomplete: "reason" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Send arrow" %>
+  </div>
+<% end %>
