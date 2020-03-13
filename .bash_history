@@ -146,3 +146,40 @@ rails c
 clear
 rails c
 exit
+clear
+rake
+clear
+rake
+clear
+rake
+clear
+rails db:migrate:reset
+clear
+rails c
+clear
+rails c
+clear
+rails c
+clear
+rails c
+clear
+rails c
+clear
+rails c
+clear
+clear
+rails c
+clear
+clear
+rake
+rake
+clear
+clear
+rake
+clear
+rake
+exit
+clear
+clear
+rails c
+exit

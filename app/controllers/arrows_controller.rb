@@ -11,8 +11,14 @@ class ArrowsController < ApplicationController
   def create
     destination = User.find(params[:arrow][:destination])
     reason = params[:arrow][:reason]
-    current_user.created_arrows.create(destination: destination, reason: reason)
-    redirect_to arrows_url
+    @arrow = current_user.created_arrows.new(destination: destination, reason: reason)
+    if @arrow.save
+      flash[:success] = 'Arrow sent'
+      redirect_to arrows_url
+    else 
+      flash[:danger] = 'Invalid arrow'
+      redirect_to new_arrow_url
+    end
   end
 
   def show; end
