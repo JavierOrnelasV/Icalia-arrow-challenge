@@ -13,11 +13,11 @@ RSpec.describe Arrow, type: :model do
                                   password: '123456',
                                   password_confirmation: '123456' )
 
-      arrow = creator.arrows.create!( destination_id: destination.id, reason: 'I wanted to create an arrow' )
+      arrow = creator.created_arrows.create!( destination: destination, reason: 'I wanted to create an arrow' )
 
-      saved_arrow = Arrow.find_by(reason: 'I wanted to create an arrow')
+      saved_arrow = destination.received_arrows.last
 
-      
+
 
       expect(arrow).to eql(saved_arrow)
     end

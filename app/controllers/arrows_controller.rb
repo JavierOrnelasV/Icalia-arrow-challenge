@@ -4,14 +4,14 @@ class ArrowsController < ApplicationController
   end
 
   def new
-    @arrow = current_user.arrows.new
+    @arrow = current_user.created_arrows.new
     @users = User.all
   end
 
   def create
     destination = User.find(params[:arrow][:destination])
     reason = params[:arrow][:reason]
-    current_user.arrows.create(destination: destination, reason: reason)
+    current_user.created_arrows.create(destination: destination, reason: reason)
     redirect_to arrows_url
   end
 
