@@ -17,6 +17,8 @@ RSpec.describe Arrow, type: :model do
 
       saved_arrow = Arrow.find_by(reason: 'I wanted to create an arrow')
 
+      
+
       expect(arrow).to eql(saved_arrow)
     end
   end

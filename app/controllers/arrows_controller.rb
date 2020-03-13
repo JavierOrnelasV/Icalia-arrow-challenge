@@ -1,6 +1,6 @@
 class ArrowsController < ApplicationController
   def index
-    @arrows = Arrow.where(destination: current_user)
+    @arrows = current_user.received_arrows
   end
 
   def new
@@ -15,6 +15,5 @@ class ArrowsController < ApplicationController
     redirect_to arrows_url
   end
 
-  def show
-  end
+  def show; end
 end

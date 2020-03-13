@@ -4,7 +4,7 @@
 
   <div class="field">
     <%= f.label :destination %><br />
-    <%= f.select :destination, options_from_collection_for_select(@users, :id, :name) %>
+    <%= f.select :destination, options_from_collection_for_select(@users, :id, :name), :id => 'user_destination' %>
   </div>
 
   <div class="field">
