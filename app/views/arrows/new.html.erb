@@ -1,18 +1,25 @@
-<h2>Send an Arrow</h2>
+<div class='container'>
+  <h2>Send an Arrow</h2>
 
-<%= form_for(@arrow) do |f| %>
+  <%= form_for(@arrow) do |f| %>
+    <div class='form-group'>
+      <div class="field mb-3">
+        <%= f.label :destination %><br />
+        <%= f.select :destination, options_from_collection_for_select(@users, :id, :name), {}, {:class => 'form-control'} %>
+      </div>
 
-  <div class="field">
-    <%= f.label :destination %><br />
-    <%= f.select :destination, options_from_collection_for_select(@users, :id, :name) %>
-  </div>
+      <div class="field mb-3">
+        <%= f.label :reason %><br />
+        <%= f.text_field :reason, autocomplete: "reason", :class => 'form-control' %>
+      </div>
 
-  <div class="field">
-    <%= f.label :reason %><br />
-    <%= f.text_field :reason, autocomplete: "reason" %>
-  </div>
+      <div class="btn-group mt-2" role="group" aria-label="Buttons">
+        <div class="actions">
+          <%= f.submit "Send arrow", :class => 'btn btn-dark mr-2' %>
+        </div>
 
-  <div class="actions">
-    <%= f.submit "Send arrow" %>
-  </div>
-<% end %>
+        <%= button_to "Back", :back, :class => 'btn btn-dark' %>
+      </div>
+    </div>
+  <% end %>
+</div>
