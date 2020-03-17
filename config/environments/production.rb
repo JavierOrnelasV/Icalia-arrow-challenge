@@ -109,6 +109,6 @@ config.action_mailer.smtp_settings = {
   config.active_record.dump_schema_after_migration = false
   config.middleware.use Rack::Deflater
   config.force_ssl = true
-  config.middleware.use Rack::CanonicalHost, ENV.fetch("APPLICATION_HOST", "icalia-arrow-challenge.com")
+  config.middleware.use Rack::CanonicalHost, ENV.fetch("APPLICATION_HOST", "icalia-arrow-challenge.herokuapp.com")
 
 end
