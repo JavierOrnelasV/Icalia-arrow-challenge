@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <h6 class="card-subtitle text-muted mb-2"><%= arrow.created_at.strftime('%d %b %Y') %></h6>
                     <p class="card-text">From: <%= arrow.creator.name %></p>
-                    <a href="#" class="btn btn-primary">See arrow</a>
+                    <%= link_to "See arrow", arrow_path(arrow), :class => 'btn btn-dark' %>
                 </div>
             </div>
         </div>

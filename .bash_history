@@ -183,3 +183,18 @@ clear
 clear
 rails c
 exit
+rails c
+clear
+clear
+rake
+clear
+rake
+clear
+rake
+clear
+rake
+clear
+rake
+clear
+rake
+exit
