@@ -198,3 +198,7 @@ rake
 clear
 rake
 exit
+rails routes
+rake
+clear
+exit
