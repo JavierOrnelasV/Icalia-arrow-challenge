@@ -23,5 +23,7 @@ class ArrowsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @arrow = Arrow.find(params[:id])
+  end
 end
