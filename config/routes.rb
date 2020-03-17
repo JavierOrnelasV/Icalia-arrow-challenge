@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "landing#index"
+  root to: "arrows#index"
   devise_for :users
   resources :arrows, only: %i[index create new show]
 end
