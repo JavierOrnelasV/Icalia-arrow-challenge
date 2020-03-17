@@ -11,7 +11,7 @@ RSpec.feature "Users", type: :feature do
         fill_in "Password confirmation", with: "12345678"
         click_on('Sign up')
       end
-      expect(current_path).to eq root_path
+      expect(current_path).to eq arrows_path
     end
 
     scenario "should fail if password is invalid" do
@@ -46,7 +46,7 @@ RSpec.feature "Users", type: :feature do
         fill_in "Password", with: "12345678"
         click_on('Log in')
       end
-      expect(current_path).to eq root_path
+      expect(current_path).to eq arrows_path
     end
 
     scenario "should fail" do
