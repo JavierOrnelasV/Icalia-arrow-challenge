@@ -10,6 +10,7 @@ gem "bootsnap", ">= 1.4.2", require: false
 gem "rack-canonical-host"
 gem "webpacker", "~> 4.0"
 gem "redis", '~> 4.0'
+gem 'uglifier'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
