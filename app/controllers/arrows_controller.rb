@@ -1,4 +1,6 @@
 class ArrowsController < ApplicationController
+  before_action :authenticate_user!, only: %i[index new create show]
+
   def index
     @arrows = current_user.received_arrows
   end
@@ -13,7 +15,7 @@ class ArrowsController < ApplicationController
     reason = params[:arrow][:reason]
     @arrow = current_user.created_arrows.new(destination: destination, reason: reason)
     if @arrow.save
-      flash[:success] = 'Arrow sent'
+      flash[:success] = 'Done! Thanks for being so kind'
       redirect_to arrows_url
     else 
       flash[:danger] = 'Invalid arrow'
