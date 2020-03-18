@@ -11,6 +11,7 @@ gem "rack-canonical-host"
 gem "webpacker", "~> 4.0"
 gem "redis", '~> 4.0'
 gem 'uglifier'
+gem 'redcarpet'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
