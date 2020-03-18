@@ -202,3 +202,12 @@ rails routes
 rake
 clear
 exit
+rails db:migrate:reset
+rails c
+bundle install
+rails c
+rails c
+rails c
+exit
+rails c
+exit

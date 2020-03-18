@@ -3,7 +3,7 @@
         <div class="card-body">
             <h5 class="card-title"><%= @arrow.creator.name %></h6>
                 <h6 class="card-subtitle text-muted mb-2"><%= @arrow.created_at.strftime('%d %b %Y') %></h6>
-                <p class="card-text"><%= @arrow.reason %></p>
+                <%= @arrow.reason.html_safe %>
                 <%= link_to "Back", arrows_path, :class => 'btn btn-dark' %>
         </div>
     </div>
