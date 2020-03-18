@@ -25,5 +25,7 @@ class ArrowsController < ApplicationController
 
   def show
     @arrow = Arrow.find(params[:id])
+    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true, quote: true, footnotes: true)
+    @arrow.reason = @markdown.render(@arrow.reason)
   end
 end
