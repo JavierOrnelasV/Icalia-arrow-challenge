@@ -7,11 +7,11 @@ class ArrowsController < ApplicationController
 
   def new
     @arrow = current_user.created_arrows.new
-    @users = User.all
+    @users_name = User.where.not(id: current_user.id).pluck(:name)
   end
 
   def create
-    destination = User.find(params[:arrow][:destination])
+    destination = User.find_by(name: params[:arrow][:destination])
     reason = params[:arrow][:reason]
     @arrow = current_user.created_arrows.new(destination: destination, reason: reason)
     if @arrow.save

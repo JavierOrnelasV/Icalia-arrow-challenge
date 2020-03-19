@@ -5,7 +5,9 @@
     <div class='form-group'>
         <div class="field mb-3">
             <%= f.label :destination %><br />
-            <%= f.select :destination, options_from_collection_for_select(@users, :id, :name), {}, {:class => 'form-control'} %>
+            <div class='autocomplete'>
+                <%= f.text_field :destination, :class => 'form-control', :id => 'auto-complete', :data => {name: @users_name} %>
+            </div>
         </div>
 
         <div class="field mb-3">
@@ -18,7 +20,7 @@
                 <%= f.submit "Send arrow", :class => 'btn btn-dark mr-2' %>
             </div>
 
-            <%= button_to "Back", :back, :class => 'btn btn-dark' %>
+            <%= link_to "Back", arrows_path, :class => 'btn btn-dark' %>
         </div>
     </div>
     <% end %>

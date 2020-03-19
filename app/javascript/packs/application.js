@@ -19,6 +19,7 @@ console.log('Hello World from Webpacker')
 
 import 'bootstrap'
 import '../stylesheets/application'
+import '../custom/autocomplete'
 
 document.addEventListener('turbolinks:load', () => {
   $("[data-toggle='tooltip']").tooltip()
