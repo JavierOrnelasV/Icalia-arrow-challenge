@@ -1,8 +1,6 @@
 class User < ApplicationRecord
-  has_many :created_arrows, class_name: 'Arrow', foreign_key: :creator_id
-  has_many :received_arrows, class_name: 'Arrow', foreign_key: :destination_id
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  has_many :created_arrows, class_name: 'Arrow', foreign_key: :creator_id, dependent: :destroy
+  has_many :received_arrows, class_name: 'Arrow', foreign_key: :destination_id, dependent: :destroy
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
