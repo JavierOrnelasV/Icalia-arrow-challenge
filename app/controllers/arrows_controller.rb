@@ -2,7 +2,7 @@ class ArrowsController < ApplicationController
   before_action :authenticate_user!, only: %i[index new create show]
 
   def index
-    @arrows = current_user.received_arrows
+    @arrows = current_user.received_arrows.order(id: :desc)
   end
 
   def new

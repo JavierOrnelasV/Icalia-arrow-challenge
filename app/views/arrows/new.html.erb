@@ -6,7 +6,7 @@
         <div class="field mb-3">
             <%= f.label :destination %><br />
             <div class='autocomplete'>
-                <%= f.text_field :destination, :class => 'form-control', :id => 'auto-complete', :data => {name: @users_name} %>
+                <%= f.text_field :destination, autocomplete: "destination", :class => 'form-control', :id => 'auto-complete', :data => {name: @users_name} %>
             </div>
         </div>
 

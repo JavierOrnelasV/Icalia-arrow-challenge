@@ -30,14 +30,5 @@ RSpec.describe User, type: :model do
 
       expect(user.save).to eql(false)
     end
-
-    it 'fails at creating a user when email is invalid' do
-      user = User.new(  name: 'User',
-                        email: 'invalid@mail',
-                        password: '123123',
-                        password_confirmation: '123123' )
-
-      expect(user.save).to eql(false)
-    end
   end
 end

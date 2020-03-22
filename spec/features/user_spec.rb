@@ -60,4 +60,37 @@ RSpec.feature "Users", type: :feature do
       expect(page).to have_content('Log in')
     end
   end
+
+  context 'edit profile' do
+    scenario "should be succesful" do
+
+      user = FactoryBot.create(:user)
+      visit new_user_session_path
+      within('form') do
+        fill_in "Email", with: user.email
+        fill_in "Password", with: "12345678"
+        click_on('Log in')
+      end
+
+      visit edit_user_registration_path
+      within('form.edit_user') do
+        fill_in "Email", with: user.email
+        fill_in "Name", with: 'New name'
+        click_on('Update')
+      end
+
+      expect(page).to have_content('Your account has been updated successfully.')
+    end
+
+    scenario "should fail" do
+      user = FactoryBot.create(:user)
+      visit new_user_session_path
+      within('form') do
+        fill_in "Email", with: user.email
+        fill_in "Password", with: "12345679"
+        click_on('Log in')
+      end
+      expect(page).to have_content('Log in')
+    end
+  end
 end
